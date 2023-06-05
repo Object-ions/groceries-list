@@ -1,6 +1,7 @@
 
 let form = document.querySelector('form');
 let items = [];
+let item
 
 window.onload = function(){
 
@@ -11,18 +12,12 @@ window.onload = function(){
         event.preventDefault();
         form.setAttribute('class','hidden');
 
-        let item1 = document.getElementById('item1').value.toUpperCase();
-        let item2 = document.getElementById('item2').value.toUpperCase();
-        let item3 = document.getElementById('item3').value.toUpperCase();
-        let item4 = document.getElementById('item4').value.toUpperCase();
-        let item5 = document.getElementById('item5').value.toUpperCase();
-        let item6 = document.getElementById('item6').value.toUpperCase();
-        let item7 = document.getElementById('item7').value.toUpperCase();
-        let item8 = document.getElementById('item8').value.toUpperCase();
-        let item9 = document.getElementById('item9').value.toUpperCase();
-        let item10 = document.getElementById('item10').value.toUpperCase();
+        for (let i = 1; i <= 10; i++) {
+            item = document.getElementById(`item${i}`).value.toUpperCase();
+            items.push(item);
+        }
 
-        items = [item1, item2, item3, item4, item5, item6, item7, item8, item9, item10];
+        items.push(item);
         items.sort();
 
         let h4 = document.getElementById('h4');
